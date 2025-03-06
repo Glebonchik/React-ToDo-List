@@ -1,54 +1,34 @@
-# React + TypeScript + Vite
+# React-ToDo-List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React-To-Do-List - простейшее веб-приложение, созданное для изучения основ React. Проект имеет кастомные хуки, константы, интерфейсы. Код написан на **TypeScript** для лучшей читаемости, типизации и дальнейшего развития. ДЛя кастомизации UI используется Tailwind.
 
-Currently, two official plugins are available:
+## Основные функции
+- Календарь
+- Добавление и удаление задач на конкретный день
+- Просмотр кол-во задач на конкретную дату
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Структура проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **src/App.tsx**: Главная точка входа.
+- **components/Mounth.tsx**: Компонент, возвращающий отдельно взятый месяц с датами.
+- **components/Tab.tsx**: Отдельная ячейка (день) кажого месяца.
+- **components/Tasks.tsx**: Окно доавления/удаление задачи.
+- **styles/styles.js**: Содержит стили, используемые в приложении.
+- **constants/**: Директория, содержащая константы, отвечающие названия дней недели и месяцев.
+  - `dayOfWeek.ts`: назвзвания дней недели
+  - `months.ts`: названия месяцев
+- **db/db.ts**: Временная простая база данных, а также функции для добавления и удаления элементов.
+- **hooks/createTasksContext.ts**: Кастомный хук для передачи стейта между дочерними компонентами
+- **interfaces/**: Различные интерфейсы для определения типов пропов в различные компоненты и возвращаемых данных
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Установка
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/Glebonchik/React-ToDo-List.git
+   cd React-ToDo-List
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2. Установка зависемостей:
+  ```bash
+  yarn
