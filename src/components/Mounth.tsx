@@ -17,7 +17,7 @@ const Month = ({daysInCurrentMonth, year, month}: MonthProps) => {
     }
 
     return (
-        <div className="border-3 border-blue-600 rounded-md h-[30rem] w-[90%] grid grid-cols-7 gap-4 p-[0.5rem]">
+        <div className="border-3 border-blue-600 rounded-md h-[90%]  w-[90%] grid xl:grid-cols-7 md:grid-cols-4 sm:grid-cols-3 gap-2 p-[0.5rem]  ">
            {tabs}
         </div>
 
